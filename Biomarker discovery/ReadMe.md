@@ -7,7 +7,7 @@ DOI: <a href = "https://doi.org/10.1093/bioinformatics/btad384">10.1093/bioinfor
 An open source biomarker discovery tool based on a multi-objective Evolutionary algorithm and the XGBoost Classifier.
 Benchmarked on 2 datasets. One omics and one clinical. With MEvA-X the performance of the XGBoost Classifiers improved their overall performance and/or the simplicity of the final models. 
 
-</h2>Details</h2>
+<h2>Details</h2>
 
 <img src="flowchart_MEvA-X.svg" alt = "Flowchart of MEvA-X">
 
