@@ -6,3 +6,5 @@ The ESR01 (Panagiotopoulos Konstantinos (https://github.com/PanKonstantinos)) is
 He is a MSc Bioinformatician and works on the investigation of biological data related to neurodevelopmental disorders (NDDs).
 
 His goal is to find similarities between different disorders, biomarker discovery, and to create tools for the merging of data to effectively increase the sample sizes of the conditions. 
+
+DOI: xxxx.zenodo.sasdada
