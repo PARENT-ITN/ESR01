@@ -20,7 +20,7 @@ library(cluster)
 #reading the file post normalisation and missing value impute
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-data_name <- 'merged_file.csv'
+data_name <- <Provide a path to the files>
 
 lmData <- read.csv(data_name, header = TRUE)
 
@@ -159,12 +159,12 @@ table(sapply(lmData , typeof))
 if(!is.factor(lmData$ID)) lmData$ID <- as.factor(lmData$ID)
 
 # Save the data
-new_version <- './new_version'
-if(!dir.exists(new_version)){
-  dir.create(new_version)
+output_path <- './Mixed_Effect_Models_Results'
+if(!dir.exists(output_path)){
+  dir.create(output_path)
 }else print('Directory exists!')
 if(FALSE){
-  write.csv(x = lmData, file = glue('{new_version}/Endpoint_A_C_D.csv'), row.names = FALSE)
+  write.csv(x = lmData, file = glue('{output_path}/Endpoint_A_C_D.csv'), row.names = FALSE)
   #write.csv(x = lmData, file = './All_patients.csv', row.names = FALSE)
 }
 
@@ -190,8 +190,6 @@ for(i in index_of_factors[2:length(index_of_factors)]){#[2:length(index_of_facto
     j = 1
     dat <- as.data.frame(matrix(ncol=4, nrow=0))
   }
-  
-  #https://stats.stackexchange.com/questions/108161/satterthwaite-vs-kenward-roger-approximations-for-the-degrees-of-freedom-in-mix
   
   factor_i <- lmData[[cols[i]]]
   # creation of a mixed-effect model
@@ -227,7 +225,7 @@ Interaction_pvalue_FDR = p.adjust(dat$Interaction_pvalue, method="BH", n=nrow(da
 dat$Interaction_pvalue_FDR <- Interaction_pvalue_FDR
 
 if(FALSE){
-  output_folder <- glue("{new_version}/ANOVA_analysis")
+  output_folder <- glue("{output_path}/ANOVA_analysis")
   if(!dir.exists(output_folder)){
     print('creating the directory to save the data')
     dir.create(output_folder)
@@ -290,17 +288,17 @@ run_analysis <- function(cor_res, comparison, lmData){
   
   ##################################################
   
-  new_version <- "october"
+  output_path <- "Results"
   
-  # Create the folder (new_version) if it doesn't exist
-  if (!dir.exists(new_version)) {
-    dir.create(new_version)
-    message("Folder created: ", new_version)
+  # Create the folder (output_path) if it doesn't exist
+  if (!dir.exists(output_path)) {
+    dir.create(output_path)
+    message("Folder created: ", output_path)
   } else {
-    message("Folder already exists: ", new_version)
+    message("Folder already exists: ", output_path)
   }
   
-  dedicated_dir <- glue('{new_version}/All_Endpoints')
+  dedicated_dir <- glue('{output_path}/All_Endpoints')
   if(!dir.exists(dedicated_dir)){
     cat(paste0('creating the directory! '))
     dir.create(dedicated_dir, recursive = TRUE)
@@ -313,8 +311,8 @@ run_analysis <- function(cor_res, comparison, lmData){
     colnames(tmp) <- c("Correlation", "P.Value", "FDR")
     write.csv(tmp, glue('{dedicated_dir}/Correlation_Glucose_VS_Factors_A_C_D.csv'))
   }
-  ######### Plot commands | | | |
-  ########               V V V V
+  ######### Plot commands 
+  ########               
   shape_ <- 16
   size_ <- 1
   alpha_ <- 0.5
@@ -524,36 +522,6 @@ corrplot(rcorr(as.matrix(lmData[,factor_variables[-1]]), type="spearman")$r,
          tl.col = 'black', tl.cex = 0.5, tl.srt = 77.5,
          addrect = 5, rect.col = 'darkred', rect.lwd = 1)
 dev.off()
-
-
-jpeg('./ANOVA_analysis/Factors_And_Glucose_corrplot.jpg', width = 16, height = 9, units = 'cm', res = 600)
-corrplot(corrs, method = 'circle', order = 'hclust', is.corr = TRUE, hclust.method = 'single',
-         na.label = 'NA', 
-         cl.cex = 0.6, cl.pos = 'b', cl.offset = 0.5, #win.asp = 9/16,
-         tl.col = 'black', tl.cex = 0.4, tl.srt = 60,
-         addrect = 6, rect.col = 'darkred', rect.lwd = 1, title = comparison, mar = c(0,0,3,0))
-dev.off()
-
-jpeg('./ANOVA_analysis/FDR_Factors_And_Glucose_heatmap.jpg', width = 16, height = 9, units = 'cm', res = 600)
-corrplot(fdr_pvals, method = 'circle', order = 'hclust', is.corr = TRUE, hclust.method = 'single',
-         na.label = 'NA', 
-         cl.cex = 0.5, cl.pos = 'b', cl.offset = 0.5, #win.asp = 9/16,
-         tl.col = 'black', tl.cex = 0.5, tl.srt = 60, diag = FALSE,
-         addrect = 5, rect.col = 'darkred', rect.lwd = 1)
-dev.off()
-
-
-corrplot(corrs, method = 'circle', order = 'hclust', is.corr = TRUE, hclust.method = 'single',
-         na.label = 'NA', cl.pos = 'b', cl.offset = 0.5, win.asp = 9/16,
-         tl.col = 'black', tl.cex = 0.4, tl.srt = 60,
-         addrect = 5,rect.col = 'orange', rect.lwd = 2)
-
-corrplot(fdr_pvals, method = 'circle', order = 'hclust', hclust.method = 'single',
-         na.label = 'NA', cl.pos = 'b', cl.offset = 0.5, diag = FALSE,
-         tl.col = 'black', tl.cex = 0.4, tl.srt = 60,
-         addrect = 5,rect.col = 'orange', rect.lwd = 2, col.lim = c(0,1))
-
-
 
 ##################################################
 ####################################################### ####################################################### 
