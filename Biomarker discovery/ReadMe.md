@@ -9,7 +9,7 @@ Benchmarked on 2 datasets. One omics and one clinical. With MEvA-X the performan
 
 </h2>Details</h2>
 
-<img="./flowchart_MEvA-X.svg">
+<img source="./flowchart_MEvA-X.svg">
 
 <h4>About the algorithm:</h4>
 
