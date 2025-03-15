@@ -1,0 +1,9 @@
+<p>The present work is part of one of the working groups of the <a href='https://parenth2020.com/'>PARENT ITN project</a> </p>
+
+<p>The scripts contained in this directory are part of the processing of data of continuous glucose measurements (CGM).
+The data is not possible to be public since there is not the proper license for this.
+Thus the scripts are the set of the processing functions of the CGM data.
+
+If someone wants to use the scripts and apply the methods to their data he/she should have in mind that proper paths should be used and check for the column names as well. </p>
+
+<p>The <a href='https://parenth2020.com/'>PARENT project</a> has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie Innovative Training Network 2020. <a href='https://cordis.europa.eu/project/id/956394'>Grant Agreement N° 956394</a></p>
