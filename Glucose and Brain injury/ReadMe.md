@@ -1,4 +1,5 @@
-<p>The present work is part of one of the working groups of the <a href='https://parenth2020.com/'>PARENT ITN project</a> </p>
+<p>The present work is part of one of the working groups of the <a href='https://parenth2020.com/'>PARENT ITN project</a>.</br>
+Scripts' DOI (Zenodo): <a href='10.5281/zenodo.15033086'> 10.5281/zenodo.15033086</a></p>
 
 <p>The scripts contained in this directory are part of the processing of data of continuous glucose measurements (CGM).
 The data is not possible to be public since there is not the proper license for this.
