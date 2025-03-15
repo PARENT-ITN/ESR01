@@ -1,7 +1,7 @@
 <h1>Note</h1>
 <p>This directory is based on the <a href="https://github.com/PanKonstantinos/MEvA-X">https://github.com/PanKonstantinos/MEvA-X </a> which belongs to the PARENT project ESR01. <br>
-DOI: <a href = "https://doi.org/10.1093/bioinformatics/btad384">10.1093/bioinformatics/btad384 </a></p>
-
+DOI: <a href = "https://doi.org/10.1093/bioinformatics/btad384">10.1093/bioinformatics/btad384 </a><br>
+Dataset DOI (Zenodo) : <a href='10.5281/zenodo.15032935'> 10.5281/zenodo.15032935 </p>
 
 # MEvA-X
 An open source biomarker discovery tool based on a multi-objective Evolutionary algorithm and the XGBoost Classifier.
