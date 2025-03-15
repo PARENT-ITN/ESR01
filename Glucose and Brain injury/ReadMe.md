@@ -7,4 +7,15 @@ Thus the scripts are the set of the processing functions of the CGM data.
 
 If someone wants to use the scripts and apply the methods to their data he/she should have in mind that proper paths should be used and check for the column names as well. </p>
 
+<p>The directory contains:
+ <dl>
+  <dt>GAM_code.R</dt>
+  <dd>-- The script uses generalized additive models to find associations with Glucose, time, and clinical covariates.</dd>
+  <dt>Hyper_And_Hypo_glycemia_time.R</dt>
+  <dd>-- The script calculates the time and percentage of time a sample has some sort of hyper-/hypo- glycemia.</dd>
+  <dt>Mixed_Effect_Models_rcodes.R</dt>
+  <dd>-- The script uses linear mixed effect models to find if covariates and time are relevant for glucose changes.</dd>
+</dl> 
+</p>
+
 <p>The <a href='https://parenth2020.com/'>PARENT project</a> has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie Innovative Training Network 2020. <a href='https://cordis.europa.eu/project/id/956394'>Grant Agreement N° 956394</a></p>
