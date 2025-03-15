@@ -1,8 +1,7 @@
 <h1>Note</h1>
 <p>This directory is based on the <a href="https://github.com/PanKonstantinos/MEvA-X">https://github.com/PanKonstantinos/MEvA-X </a> which belongs to the PARENT project ESR01. </p>
 
-<p>The PARENT project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie Innovative Training Network 2020.
-Grant Agreement N° 956394</p>
+<p>The <a href='https://parenth2020.com/'>PARENT project</a> has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie Innovative Training Network 2020. <a href='https://cordis.europa.eu/project/id/956394'>Grant Agreement N° 956394</a></p>
 
 <p> DOI: <a href = "https://doi.org/10.1093/bioinformatics/btad384">10.1093/bioinformatics/btad384 </a><br>
 Code & data DOI (Zenodo) : <a href='10.5281/zenodo.15032935'> 10.5281/zenodo.15032935 </p>
